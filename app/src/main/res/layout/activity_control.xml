@@ -80,7 +80,142 @@
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
                 android:typeface="normal" />
+        </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/fresa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/fresa"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                app:srcCompat="@drawable/fresa" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/editText3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center"
+                android:layout_marginRight="30dp"
+                android:fontFamily="sans-serif"
+                android:text="Fresa"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:typeface="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/frijol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/frijol"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                app:srcCompat="@drawable/frijol" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/editText4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center"
+                android:layout_marginRight="30dp"
+                android:fontFamily="sans-serif"
+                android:text="Frijol"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:typeface="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/agave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/agave"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                app:srcCompat="@drawable/agave" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/editText5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center"
+                android:layout_marginRight="30dp"
+                android:fontFamily="sans-serif"
+                android:text="Agave"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:typeface="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tomate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/tomate"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                app:srcCompat="@drawable/tomate" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/editText6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center"
+                android:layout_marginRight="30dp"
+                android:fontFamily="sans-serif"
+                android:text="Tomate"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:typeface="normal" />
         </LinearLayout>
 
         <RelativeLayout

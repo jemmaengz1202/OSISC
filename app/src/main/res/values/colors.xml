@@ -7,4 +7,13 @@
 
     <color name="durazno">#fe6e4e</color>
     <color name="maiz">#fbde5d</color>
+    <color name="maiz_dark">#fbc45d</color>
+    <color name="fresa">#f40218</color>
+    <color name="fresa_Dark">#c70110</color>
+    <color name="agave">#4b907b</color>
+    <color name="agave_dark">#1d4f44</color>
+    <color name="frijol">#96662f</color>
+    <color name="frijol_dark">#995710</color>
+    <color name="tomate">#7ea907</color>
+    <color name="tomate_dark">#547603</color>
 </resources>

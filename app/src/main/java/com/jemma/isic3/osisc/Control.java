@@ -25,6 +25,10 @@ public class Control extends AppCompatActivity implements View.OnTouchListener {
 
     private LinearLayout durazno;
     private LinearLayout maiz;
+    private LinearLayout fresa;
+    private LinearLayout agave;
+    private LinearLayout frijol;
+    private LinearLayout tomate;
     private Button button_prueba;
 
     private String address = null;
@@ -43,9 +47,14 @@ public class Control extends AppCompatActivity implements View.OnTouchListener {
 
         durazno = (LinearLayout) findViewById(R.id.durazno);
         maiz = (LinearLayout) findViewById(R.id.maiz);
+        fresa = (LinearLayout) findViewById(R.id.fresa);
+        agave = (LinearLayout) findViewById(R.id.agave);
+        frijol = (LinearLayout) findViewById(R.id.frijol);
+        tomate = (LinearLayout) findViewById(R.id.tomate);
+
         button_prueba = (Button) findViewById(R.id.button_prueba);
 
-        new ConnectBT().execute();
+        //new ConnectBT().execute();
 
         durazno.setOnTouchListener(this);
         maiz.setOnTouchListener(this);
@@ -56,7 +65,6 @@ public class Control extends AppCompatActivity implements View.OnTouchListener {
                 if (btSocket!=null)
                 {
                     try
-
                     {
                         btSocket.getOutputStream().write("P".getBytes());
                         msg("Se ha enviado una prueba");
@@ -97,7 +105,27 @@ public class Control extends AppCompatActivity implements View.OnTouchListener {
                 }
 
             case R.id.maiz:
-
+                switch(e.getAction())
+                {
+                    case MotionEvent.ACTION_DOWN:
+                        durazno.setBackgroundColor(ContextCompat.getColor(this, R.color.maiz_dark));
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        maiz.setBackgroundColor(ContextCompat.getColor(this, R.color.maiz));
+                        if (btSocket!=null)
+                        {
+                            try
+                            {
+                                btSocket.getOutputStream().write("M".toString().getBytes());
+                                Helper.printAlert("Modo seleccionado", "Se ha seleccionado el OSISC con los parametros del maiz", Control.this);
+                            }
+                            catch (IOException ex)
+                            {
+                                msg("Error");
+                            }
+                        }
+                        break;
+                }
                 break;
 
             default:
@@ -155,6 +183,6 @@ public class Control extends AppCompatActivity implements View.OnTouchListener {
 
     private void msg(String s)
     {
-        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
     }
 }

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">OSISC</string>
     <string name="realizar_prueba">Realizar prueba</string>
+    <string name="detener">Detener</string>
 </resources>

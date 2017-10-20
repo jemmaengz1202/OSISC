@@ -6,6 +6,7 @@
     <color name="actionBarText">#ffffff</color>
 
     <color name="durazno">#fe6e4e</color>
+    <color name="durazno_dark">#cb583e</color>
     <color name="maiz">#fbde5d</color>
     <color name="maiz_dark">#fbc45d</color>
     <color name="fresa">#f40218</color>

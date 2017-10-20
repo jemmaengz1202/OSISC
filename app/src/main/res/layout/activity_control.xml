@@ -221,7 +221,22 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="bottom">
+            android:gravity="bottom"
+            android:paddingBottom="50dp">
+
+            <Button
+                android:id="@+id/detener"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@color/fresa"
+                android:text="@string/detener" />
 
             <Button
                 android:id="@+id/button_prueba"
@@ -229,8 +244,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="25dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:text="@string/realizar_prueba" />
         </RelativeLayout>

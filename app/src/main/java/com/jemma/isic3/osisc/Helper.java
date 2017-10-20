@@ -2,6 +2,7 @@ package com.jemma.isic3.osisc;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 
 /**
@@ -9,7 +10,9 @@ import android.support.v7.app.AlertDialog;
  */
 
 public class Helper {
-    public static void printAlert(String title, String text, Context context) {
+    private static boolean canceled = false;
+
+    public static boolean printAlert(String title, String text, final Context context) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                 context);
         // set title
@@ -18,11 +21,17 @@ public class Helper {
         alertDialogBuilder
                 .setMessage(text)
                 .setCancelable(false)
-                .setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
+                    }
+                })
+                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        canceled = true;
                     }
                 });
         AlertDialog al = alertDialogBuilder.create();
         al.show();
+        return canceled;
     }
 }

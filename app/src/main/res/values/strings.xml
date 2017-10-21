@@ -2,4 +2,25 @@
     <string name="app_name">OSISC</string>
     <string name="realizar_prueba">Realizar prueba</string>
     <string name="detener">Detener</string>
+    <string name="descripcion_osisc">
+        El dispositivo OSISC ahora está programado en el perfil seleccionado.
+        Ahora puede cerrar la aplicación, desactivar el bluetooth, apagar o irse a tomar un café.
+        El dispositivo OSISC no perderá la configuración.
+    </string>
+    <string name="acerca_de_osisc">
+        Optimized Sustainable Irrigation System for Crops.\n
+        Es un sistema sustentable de captación de agua pluvial conjugado a un sistema de riego
+        automatizado que optimiza el agua utilizada en el riego (de manera general en la zona)
+        en Arandas, implementando un riego por goteo que reduce el uso del agua e incrementa la
+        producción de un fruto x. Este sistema usa agua de lluvia y la optimiza en el riego, dicho
+        riego estara impulsado por energía solar y todo nuestro sistema es totalmente eco-amistoso
+        y verde.\n\n
+        Desarrollado por:\n
+        Jonathan Cristóbal Guzmán Guadarrama\n
+        José Guadalupe Torres Padilla\n
+        José Armando Lara Espinoza\n
+        Michelle Sainz Aguilar\n
+        Heriberto Salvador\n
+        Juan Ramón Martínez Guillén
+    </string>
 </resources>

@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Control" />
+        <activity android:name=".Agradecimiento" />
         <activity android:name=".AcercaDe"></activity>
     </application>
 

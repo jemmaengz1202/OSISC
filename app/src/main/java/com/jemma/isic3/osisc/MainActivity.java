@@ -106,11 +106,19 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-
+        Intent i;
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.about) {
-            Toast.makeText(getApplicationContext(), "Has dado click a Acerca De", Toast.LENGTH_SHORT).show();
+        switch(id) {
+            case R.id.about:
+                i = new Intent(MainActivity.this, AcercaDe.class);
+                startActivity(i);
+                break;
+            case R.id.inicio:
+                i = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(i);
+                break;
+            default:
         }
 
         return super.onOptionsItemSelected(item);

@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class AcercaDe extends AppCompatActivity {
+import javax.crypto.KeyAgreement;
+
+public class Agradecimiento extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_acerca_de2);
+        setContentView(R.layout.activity_acerca_de);
     }
 
     @Override
@@ -34,11 +36,11 @@ public class AcercaDe extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         switch(id) {
             case R.id.about:
-                i = new Intent(AcercaDe.this, AcercaDe.class);
+                i = new Intent(Agradecimiento.this, AcercaDe.class);
                 startActivity(i);
                 break;
             case R.id.inicio:
-                i = new Intent(AcercaDe.this, MainActivity.class);
+                i = new Intent(Agradecimiento.this, MainActivity.class);
                 startActivity(i);
                 break;
             default:

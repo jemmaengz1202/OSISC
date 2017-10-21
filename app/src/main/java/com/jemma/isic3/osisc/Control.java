@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
-import android.content.Context;
 import android.content.Intent;
 //import android.graphics.Color;
 import android.os.AsyncTask;
@@ -18,7 +17,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-import com.jemma.isic3.osisc.Helper;
 
 import java.io.IOException;
 import java.util.UUID;
@@ -32,6 +30,7 @@ public class Control extends AppCompatActivity implements View.OnTouchListener {
     private LinearLayout frijol;
     private LinearLayout tomate;
     private Button button_prueba;
+    private Button button_cancelar;
 
     private String address = null;
     BluetoothAdapter myBluetooth = null;
@@ -55,8 +54,9 @@ public class Control extends AppCompatActivity implements View.OnTouchListener {
         tomate = (LinearLayout) findViewById(R.id.tomate);
 
         button_prueba = (Button) findViewById(R.id.button_prueba);
+        button_cancelar = (Button) findViewById(R.id.detener);
 
-        //new ConnectBT().execute();
+        new ConnectBT().execute();
 
         durazno.setOnTouchListener(this);
         maiz.setOnTouchListener(this);
@@ -83,11 +83,29 @@ public class Control extends AppCompatActivity implements View.OnTouchListener {
             }
         });
 
+        button_cancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (btSocket!=null)
+                {
+                    try
+                    {
+                        btSocket.getOutputStream().write("O".getBytes());
+                        msg("Se ha detenido la ejecucion de OSISC");
+                    }
+                    catch (IOException ex)
+                    {
+                        msg("Error");
+                    }
+                }
+            }
+        });
+
     }
 
     @Override
     public boolean onTouch(View v, MotionEvent e) {
-        Intent intent = new Intent(Control.this, MainActivity.class);
+        Intent intent = new Intent(Control.this, Agradecimiento.class);
         switch(v.getId()) {
             case R.id.durazno:
                 switch(e.getAction())
@@ -97,15 +115,13 @@ public class Control extends AppCompatActivity implements View.OnTouchListener {
                         break;
                     case MotionEvent.ACTION_UP:
                         durazno.setBackgroundColor(ContextCompat.getColor(this, R.color.durazno));
-                        msg("Se ha seleccionado el modo Durazno");
-                        startActivity(intent);
                         if (btSocket!=null)
                         {
                             try
                             {
                                 btSocket.getOutputStream().write("D".toString().getBytes());
                                 msg("Se ha seleccionado el modo Durazno");
-//                                startActivity(intent);
+                                startActivity(intent);
                             }
                             catch (IOException ex)
                             {
@@ -129,12 +145,8 @@ public class Control extends AppCompatActivity implements View.OnTouchListener {
                             try
                             {
                                 btSocket.getOutputStream().write("M".toString().getBytes());
-                                if(Helper.printAlert("Modo seleccionado",
-                                            "Se ha seleccionado el OSISC con los parametros del Maiz",
-                                            Control.this)) {
-                                    startActivity(intent);
-                                }
-                                msg("Se ha seleccionado el modo Maiz");
+                                msg("Se ha seleccionado el modo Maíz");
+                                startActivity(intent);
                             }
                             catch (IOException ex)
                             {
@@ -158,12 +170,8 @@ public class Control extends AppCompatActivity implements View.OnTouchListener {
                             try
                             {
                                 btSocket.getOutputStream().write("S".toString().getBytes());
-                                if(Helper.printAlert("Modo seleccionado",
-                                        "Se ha seleccionado el OSISC con los parametros de la Fresa",
-                                        Control.this)) {
-                                    startActivity(intent);
-                                }
-                                msg("Se ha seleccionado el modo Fresa");
+                                msg("Se ha seleccionado el modo Durazno");
+                                startActivity(intent);
                             }
                             catch (IOException ex)
                             {
@@ -187,12 +195,8 @@ public class Control extends AppCompatActivity implements View.OnTouchListener {
                             try
                             {
                                 btSocket.getOutputStream().write("A".toString().getBytes());
-                                if(Helper.printAlert("Modo seleccionado",
-                                        "Se ha seleccionado el OSISC con los parametros del Agave",
-                                        Control.this)) {
-                                    startActivity(intent);
-                                }
                                 msg("Se ha seleccionado el modo Agave");
+                                startActivity(intent);
                             }
                             catch (IOException ex)
                             {
@@ -215,13 +219,9 @@ public class Control extends AppCompatActivity implements View.OnTouchListener {
                         {
                             try
                             {
-                                btSocket.getOutputStream().write("M".toString().getBytes());
-                                if(Helper.printAlert("Modo seleccionado",
-                                        "Se ha seleccionado el OSISC con los parametros del Frijol",
-                                        Control.this)) {
-                                    startActivity(intent);
-                                }
+                                btSocket.getOutputStream().write("F".toString().getBytes());
                                 msg("Se ha seleccionado el modo Frijol");
+                                startActivity(intent);
                             }
                             catch (IOException ex)
                             {
@@ -244,13 +244,9 @@ public class Control extends AppCompatActivity implements View.OnTouchListener {
                         {
                             try
                             {
-                                btSocket.getOutputStream().write("M".toString().getBytes());
-                                if(Helper.printAlert("Modo seleccionado",
-                                        "Se ha seleccionado el OSISC con los parametros del Tomate",
-                                        Control.this)) {
-                                    startActivity(intent);
-                                }
+                                btSocket.getOutputStream().write("T".toString().getBytes());
                                 msg("Se ha seleccionado el modo Tomate");
+                                startActivity(intent);
                             }
                             catch (IOException ex)
                             {
@@ -334,9 +330,19 @@ public class Control extends AppCompatActivity implements View.OnTouchListener {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        Intent i;
+
         //noinspection SimplifiableIfStatement
-        if (id == R.id.about) {
-            Toast.makeText(getApplicationContext(), "Has dado click a Acerca De", Toast.LENGTH_SHORT).show();
+        switch(id) {
+            case R.id.about:
+                i = new Intent(Control.this, AcercaDe.class);
+                startActivity(i);
+                break;
+            case R.id.inicio:
+                i = new Intent(Control.this, MainActivity.class);
+                startActivity(i);
+                break;
+            default:
         }
 
         return super.onOptionsItemSelected(item);

@@ -10,7 +10,7 @@ import android.support.v7.app.AlertDialog;
  */
 
 public class Helper {
-    private static boolean canceled = false;
+    private static boolean canceled = true;
 
     public static boolean printAlert(String title, String text, final Context context) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
@@ -27,7 +27,7 @@ public class Helper {
                 })
                 .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        canceled = true;
+                        canceled = false;
                     }
                 });
         AlertDialog al = alertDialogBuilder.create();

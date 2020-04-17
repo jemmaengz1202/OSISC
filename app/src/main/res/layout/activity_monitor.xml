@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    tools:context="com.jemma.isic3.osisc.Control">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif"
+            android:text="TextView"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:typeface="normal"
+            tools:text="Monitor de sensores" />
+
+        <TextView
+            android:id="@+id/temperatura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Temperatura: "
+            android:textSize="22sp"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/humedad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Humedad: "
+            android:textSize="22sp"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/iluminacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Iluminación: "
+            android:textSize="22sp"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/litros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Litros de agua en la cisterna: "
+            android:textSize="22sp"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
+
